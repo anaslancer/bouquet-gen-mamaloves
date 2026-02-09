@@ -1,0 +1,9 @@
+January,June,February
+June Single flower
+
+April,September,February (single)
+
+June,February,May (with leaf right)
+June - Not signel flower
+
+September,October(single flower),July,May

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bouquet Generator — Demo</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="p-4">
+    <div class="container">
+      <h1 class="mb-3">Bouquet Generator Demo</h1>
+
+      <form id="bouquetForm" class="mb-3">
+        <div class="mb-3">
+          <label for="flowers" class="form-label"
+            >Flowers (comma separated)</label
+          >
+          <input
+            id="flowers"
+            class="form-control"
+            value="Februari,April,Augustus,December"
+            aria-describedby="flowersHelp"
+          />
+          <div id="flowersHelp" class="form-text">
+            Enter flower names separated by commas (e.g., "Februari,April").
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="charmShape" class="form-label"
+            >Charm Shape (optional)</label
+          >
+          <select id="charmShape" class="form-select">
+            <option value="">(none)</option>
+            <option value="coin">coin</option>
+            <option value="heart">heart</option>
+            <option value="oval">oval</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="generateBtn">
+          Generate
+        </button>
+      </form>
+
+      <div id="status" class="mb-3" aria-live="polite"></div>
+
+      <div
+        id="svgContainer"
+        class="border p-0"
+        style="
+          min-height: 200px;
+          border-radius: 50%;
+          background: #fff;
+          width: 400px;
+          height: 400px;
+        "
+      ></div>
+    </div>
+
+    <script>
+      const form = document.getElementById('bouquetForm');
+      const status = document.getElementById('status');
+      const container = document.getElementById('svgContainer');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = '';
+        container.innerHTML = '';
+
+        const flowersStr = document.getElementById('flowers').value;
+        const flowers = flowersStr
+          .split(',')
+          .map((s) => s.trim())
+          .filter(Boolean);
+        const charmShapeVal = document.getElementById('charmShape').value;
+        const body = { flowers };
+        if (charmShapeVal) body.charmShape = charmShapeVal;
+
+        try {
+          status.innerHTML =
+            '<div class="spinner-border spinner-border-sm" role="status"></div> Generating...';
+
+          const res = await fetch('/api/bouquet', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify(body),
+          });
+
+          if (!res.ok) {
+            // Try parsing JSON error first, fallback to text
+            let errBody;
+            try {
+              const j = await res.json();
+              errBody = j && (j.error || j.message || JSON.stringify(j));
+            } catch (_) {
+              try {
+                errBody = await res.text();
+              } catch (_) {
+                errBody = '';
+              }
+            }
+
+            throw new Error(
+              'Server error ' + res.status + (errBody ? ': ' + errBody : ''),
+            );
+          }
+
+          // Expecting JSON response like { svg: '<svg .../>', ... }
+          const result = await res.json();
+          const svgText =
+            result &&
+            (result.svg || (typeof result === 'string' ? result : ''));
+          console.log(svgText);
+
+          if (!svgText) {
+            throw new Error('No SVG returned in response');
+          }
+
+          // Insert the SVG into the page. We assume the server returns safe, sanitized SVG.
+          container.innerHTML = svgText;
+          status.innerHTML = '<span class="text-success">SVG received</span>';
+
+          // Add a download link
+          const blob = new Blob([svgText], { type: 'image/svg+xml' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'bouquet.svg';
+          a.textContent = 'Download SVG';
+          a.className = 'btn btn-outline-secondary btn-sm ms-2';
+          status.appendChild(a);
+        } catch (err) {
+          status.innerHTML =
+            '<span class="text-danger">Error: ' +
+            (err.message || err) +
+            '</span>';
+          console.error(err);
+        }
+      });
+    </script>
+  </body>
+</html>
