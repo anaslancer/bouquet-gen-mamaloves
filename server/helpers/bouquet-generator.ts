@@ -3,7 +3,12 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import type { GenerateBouquetRequest, CharmShape } from '@shared/schema';
 import { generateLayout, getFlowerPosition } from './layout';
-import { loadFlowerSVG, composeBouquet, checkAssetsExist } from './svg-utils';
+import {
+  loadFlowerSVG,
+  composeBouquet,
+  checkAssetsExist,
+  resolveCollisions,
+} from './svg-utils';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -47,7 +52,12 @@ export async function generateBouquet(
   }
 
   const layout = generateLayout(flowerSVGs, charmShape as CharmShape);
-  const svg = composeBouquet(layout, flowerSVGs, charmShape as CharmShape);
+  const resolvedLayout = resolveCollisions(
+    layout,
+    flowerSVGs,
+    layout.bindingPoint,
+  );
+  const svg = composeBouquet(resolvedLayout, flowerSVGs, charmShape as CharmShape);
 
   ensureOutputDir();
   const filename = generateFilename(flowers);

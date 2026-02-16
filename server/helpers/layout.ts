@@ -13,8 +13,8 @@ export function getFlowerPosition(
 ): 'left' | 'center' | 'right' {
   if (totalSlots === 1) return 'center';
   const centerIndex = (totalSlots - 1) / 2;
-  if (slotIndex < centerIndex - 0.5) return 'left';
-  if (slotIndex > centerIndex + 0.5) return 'right';
+  if (slotIndex < centerIndex) return 'left';
+  if (slotIndex > centerIndex) return 'right';
   return 'center';
 }
 
