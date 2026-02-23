@@ -15,3 +15,12 @@ export const generateBouquetSchema = z.object({
 });
 
 export type GenerateBouquetRequest = z.infer<typeof generateBouquetSchema>;
+
+export const generatePosterSchema = z.object({
+  flowers: z.array(z.string()).min(1).max(5),
+  charmShape: z.enum(['coin', 'oval', 'heart', 'round']).default('coin'),
+  title: z.string().optional(),
+  names: z.string().optional(),
+});
+
+export type GeneratePosterRequest = z.infer<typeof generatePosterSchema>;

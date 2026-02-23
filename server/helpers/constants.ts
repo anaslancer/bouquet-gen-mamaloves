@@ -100,3 +100,7 @@ export const SVG_CONFIG = {
 };
 
 export { FLOWER_FILES } from './flower_constants';
+
+/** Shopify checkout property names for poster text (configurable) */
+export const POSTER_TITLE_PROP = 'Poster titel';
+export const POSTER_NAMES_PROP = 'Namen';

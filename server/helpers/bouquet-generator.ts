@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import type { GenerateBouquetRequest, CharmShape } from '@shared/schema';
+import { POSTER_TITLE_PROP, POSTER_NAMES_PROP } from './constants';
 import { generateLayout, getFlowerPosition } from './layout';
 import {
   loadFlowerSVG,
@@ -97,6 +98,37 @@ export function extractFlowersFromLineItem(lineItem: any): string[] | null {
   }
 
   return flowers.filter(Boolean).length > 0 ? flowers.filter(Boolean) : null;
+}
+
+export function extractTextFromOrder(orderData: {
+  note_attributes?: Array<{ name: string; value: string }>;
+  line_items?: Array<{ properties?: Array<{ name: string; value: string }> }>;
+}): { title?: string; names?: string } {
+  const result: { title?: string; names?: string } = {};
+
+  function getProp(
+    props: Array<{ name: string; value: string }> | undefined,
+    name: string,
+  ): string | undefined {
+    if (!props) return undefined;
+    const p = props.find((x) => x.name === name);
+    return p?.value?.trim() || undefined;
+  }
+
+  if (orderData.note_attributes?.length) {
+    result.title = getProp(orderData.note_attributes, POSTER_TITLE_PROP);
+    result.names = getProp(orderData.note_attributes, POSTER_NAMES_PROP);
+  }
+
+  if (result.title === undefined && result.names === undefined) {
+    const firstItem = orderData.line_items?.[0];
+    if (firstItem?.properties?.length) {
+      result.title = getProp(firstItem.properties, POSTER_TITLE_PROP);
+      result.names = getProp(firstItem.properties, POSTER_NAMES_PROP);
+    }
+  }
+
+  return result;
 }
 
 export function parseCharmTypeFromSKU(sku: string): CharmShape {

@@ -1,11 +1,13 @@
 import type { Express, Request, Response } from 'express';
 import { createServer, type Server } from 'http';
-import { generateBouquetSchema } from '@shared/schema';
+import { generateBouquetSchema, generatePosterSchema } from '@shared/schema';
 import {
   generateBouquet,
   extractFlowersFromLineItem,
+  extractTextFromOrder,
   parseCharmTypeFromSKU,
 } from './helpers/bouquet-generator';
+import { generatePoster } from './helpers/poster-generator';
 import { checkAssetsExist } from './helpers/svg-utils';
 import { FLOWER_FILES } from './helpers/constants';
 
@@ -143,6 +145,100 @@ export async function registerRoutes(
       supportedFlowerCounts: [1, 2, 3, 4, 5],
       supportedCharmShapes: ['coin', 'oval', 'heart', 'round'],
     });
+  });
+
+  app.post('/api/poster', async (req: Request, res: Response) => {
+    try {
+      const parseResult = generatePosterSchema.safeParse(req.body);
+
+      if (!parseResult.success) {
+        return res.status(400).json({
+          ok: false,
+          error: 'Invalid request',
+          details: parseResult.error.errors,
+        });
+      }
+
+      const { flowers, charmShape, title, names } = parseResult.data;
+      const bouquetResult = await generateBouquet({ flowers, charmShape });
+      const posterResult = await generatePoster(
+        { svg: bouquetResult.svg, title, names },
+        { flowers },
+      );
+
+      return res.json({
+        ok: true,
+        filename: posterResult.filename,
+        path: posterResult.path,
+        pdf: posterResult.buffer.toString('base64'),
+      });
+    } catch (error) {
+      console.error('Poster generation error:', error);
+      return res.status(500).json({
+        ok: false,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+    }
+  });
+
+  app.post('/api/poster/from-order', async (req: Request, res: Response) => {
+    try {
+      const orderData = req.body.order || req.body;
+
+      if (!orderData.line_items || !Array.isArray(orderData.line_items)) {
+        return res.status(400).json({
+          ok: false,
+          error: 'No line_items found',
+        });
+      }
+
+      const { title, names } = extractTextFromOrder(orderData);
+      const results = [];
+
+      for (const lineItem of orderData.line_items) {
+        if (!lineItem.sku?.startsWith('BFB')) continue;
+
+        const flowers = extractFlowersFromLineItem(lineItem);
+        if (!flowers || flowers.length === 0) continue;
+
+        const charmShape = parseCharmTypeFromSKU(lineItem.sku);
+        const bouquetResult = await generateBouquet({ flowers, charmShape });
+        const posterResult = await generatePoster(
+          { svg: bouquetResult.svg, title, names },
+          {
+            orderId: String(orderData.id),
+            lineItemId: String(lineItem.id),
+            flowers,
+          },
+        );
+
+        results.push({
+          lineItemId: lineItem.id,
+          filename: posterResult.filename,
+          path: posterResult.path,
+          pdf: posterResult.buffer.toString('base64'),
+        });
+      }
+
+      if (results.length === 0) {
+        return res.status(400).json({
+          ok: false,
+          error: 'No valid birthflower products found',
+        });
+      }
+
+      return res.json({
+        ok: true,
+        orderId: orderData.id,
+        posters: results,
+      });
+    } catch (error) {
+      console.error('Poster from-order error:', error);
+      return res.status(500).json({
+        ok: false,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+    }
   });
 
   return httpServer;

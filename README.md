@@ -66,6 +66,25 @@ Returns all available flower configurations, SVG paths, months, and positions.
 
 Health check — returns supported flower counts and charm shapes.
 
+### `POST /api/poster`
+
+Generate a print-ready A4 PDF poster with bouquet and optional title/names text.
+
+```json
+{
+  "flowers": ["Februari", "April", "Augustus"],
+  "charmShape": "coin",
+  "title": "Birth Bouquet",
+  "names": "Emma & Sophie"
+}
+```
+
+Returns `{ ok, filename, path, pdf }` (pdf is base64-encoded).
+
+### `POST /api/poster/from-order`
+
+Generate posters from a Shopify-style order payload. Extracts flowers from line items and title/names from order properties (`Poster titel`, `Namen`). Returns `{ ok, orderId, posters: [{ lineItemId, filename, path, pdf }] }`.
+
 ## Testing with the Demo UI
 
 1. Start the server (`npm run dev:watch`)
@@ -94,6 +113,10 @@ curl -X POST http://localhost:8000/api/bouquet \
   -d '{"flowers":["Februari","April","Augustus"],"charmShape":"coin"}'
 ```
 
+## Fonts
+
+Poster PDFs use embedded fonts from [@fontsource/crimson-text](https://www.npmjs.com/package/@fontsource/crimson-text) (OFL-1.1) and [@fontsource/source-sans-3](https://www.npmjs.com/package/@fontsource/source-sans-3) (OFL-1.1) for title and names text. If font files are missing, Helvetica is used as fallback.
+
 ## Project Structure
 
 ```
@@ -109,6 +132,8 @@ curl -X POST http://localhost:8000/api/bouquet \
 │       ├── layout.ts             # Flower positioning and angle layout
 │       ├── constants.ts          # Layout angles, scales, charm configs
 │       ├── flower_constants.ts   # Per-flower SVG file mappings and polygons
+│       ├── poster-generator.ts   # A4 PDF poster generation
+│       ├── poster-constants.ts   # Poster typography and layout
 │       └── types.ts              # TypeScript interfaces
 ├── shared/
 │   └── schema.ts         # Zod validation schemas

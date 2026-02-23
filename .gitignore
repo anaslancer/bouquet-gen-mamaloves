@@ -3,3 +3,5 @@ dist
 .DS_Store
 *.tar.gz
 test.txt
+generated_svg
+generated_pdf

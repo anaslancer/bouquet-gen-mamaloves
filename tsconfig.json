@@ -1,5 +1,5 @@
 {
-  "include": ["shared/**/*", "server/**/*"],
+  "include": ["shared/**/*", "server/**/*", "types/**/*"],
   "exclude": ["node_modules", "**/*.test.ts"],
   "compilerOptions": {
     "incremental": true,
@@ -14,7 +14,8 @@
     "allowImportingTsExtensions": true,
     "moduleResolution": "bundler",
     "baseUrl": ".",
-    "types": ["node"],
+    "types": ["node", "svg-to-pdfkit"],
+    "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
       "@/*": ["./client/src/*"],
       "@shared/*": ["./shared/*"]
