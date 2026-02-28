@@ -13,16 +13,34 @@ December
 
 
 
-
+Februari,April,Januari,November
+Januari,Mei,Juni
 Februari,Maart,Februari
 Februari,Oktober,November
-Januari,Mei,Juni
+
+
+
+2~3 flowers should be a bit wider
+
+
+
+
+
+
+Februari,Maart,Februari - will provide sample.
+Februari,Oktober,November - weird
+Januari,Mei,Juni - weird
 Januari,September,November
 Maart,November,Augustus
 Mei,Oktober
 September,Juni,Februari
 April,Oktober,November
-Februari,April,Januari,November
+
+
+
+Februari,April,Januari,November - 2nd too big, 4th too small, 4th too much horizontal. (example will be provided.)
+
+
 
 Januari,Februari,September,November
 November,Oktober,April,September
@@ -35,9 +53,19 @@ Februari,April,Juni,Oktober
 April,September,Februari,Maart
 
 
-April,Augustus,November,Maart,Augustus
+April,Augustus,November,Maart,Augustus - good
 Mei,December,Juni,Oktober
-September,Maart,Februari,Maart,November
+September,Maart,Februari,Maart,November - same size (2,3,4)
 April,Mei,Augustus,Oktober,December
-April,Januari,Februari,Januari,December
+April,Januari,Februari,Januari,December - same size (2,3,4)
 September,Maart,November,Oktober,Juni
+
+
+Februari,April,Juni,Oktober - Juni Flower is too small
+April,Mei,Augustus,Juli - Juli is too small
+
+SVG Stem thickness differing issue
+
+Size differing.
+
+April has good thickness

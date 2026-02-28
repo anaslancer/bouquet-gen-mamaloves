@@ -61,8 +61,15 @@ export async function generateBouquet(
 
   const balancedLayout = balanceFlowerAngles(resolvedLayout, flowerSVGs);
 
-  const svg = composeBouquet(
+  // Re-run collision resolution after balancing (balancing can re-introduce overlaps)
+  const finalLayout = resolveCollisions(
     balancedLayout,
+    flowerSVGs,
+    balancedLayout.bindingPoint,
+  );
+
+  const svg = composeBouquet(
+    finalLayout,
     flowerSVGs,
     charmShape as CharmShape,
   );
