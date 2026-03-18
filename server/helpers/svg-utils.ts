@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { getDirname } from './path-utils';
+import { getProjectRoot } from './path-utils';
 import type { CharmShape } from '@shared/schema';
 import type { FlowerSVG, FlowerSlot, LayoutTemplate, Point } from './types';
 
@@ -12,8 +12,10 @@ import {
   CHARM_SHAPE_CONFIG,
 } from './constants';
 
-const __dirname = getDirname(typeof import.meta !== 'undefined' ? import.meta.url : undefined);
-const ASSETS_PATH = path.join(__dirname, '../../assets/flowers');
+const ASSETS_PATH = path.join(getProjectRoot(), 'assets/flowers');
+export function getFlowersAssetsPath(): string {
+  return ASSETS_PATH;
+}
 
 function removeBackgroundPath(svgContent: string): string {
   return svgContent.replace(/<g>\s*<path[^>]*Z"\s*\/?>\s*<\/g>/i, '');

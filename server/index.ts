@@ -1,10 +1,8 @@
 import express, { type Request, Response, NextFunction } from 'express';
 import path from 'path';
-import { getDirname } from './helpers/path-utils';
+import { getProjectRoot } from './helpers/path-utils';
 import { registerRoutes } from './routes';
 import { createServer } from 'http';
-
-const __dirname = getDirname(typeof import.meta !== 'undefined' ? import.meta.url : undefined);
 
 const app = express();
 const httpServer = createServer(app);
@@ -25,7 +23,7 @@ app.use(
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
-app.use('/flowers', express.static(path.join(__dirname, '../assets/flowers')));
+app.use('/flowers', express.static(path.join(getProjectRoot(), 'assets/flowers')));
 
 export function log(message: string, source = 'express') {
   const formattedTime = new Date().toLocaleTimeString('en-US', {

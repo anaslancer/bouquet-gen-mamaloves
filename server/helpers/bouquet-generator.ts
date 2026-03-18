@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { getDirname } from './path-utils';
+import { getProjectRoot } from './path-utils';
 import type { GenerateBouquetRequest, CharmShape } from '@shared/schema';
 import { POSTER_TITLE_PROP, POSTER_NAMES_PROP } from './constants';
 import { generateLayout, getFlowerPosition } from './layout';
@@ -8,12 +8,12 @@ import {
   loadFlowerSVG,
   composeBouquet,
   checkAssetsExist,
+  getFlowersAssetsPath,
   resolveCollisions,
   balanceFlowerAngles,
 } from './svg-utils';
 
-const __dirname = getDirname(typeof import.meta !== 'undefined' ? import.meta.url : undefined);
-const OUTPUT_DIR = path.join(__dirname, '../../generated_svg');
+const OUTPUT_DIR = path.join(getProjectRoot(), 'generated_svg');
 
 function ensureOutputDir(): void {
   if (!fs.existsSync(OUTPUT_DIR)) {
@@ -37,7 +37,7 @@ export async function generateBouquet(
   }
 
   if (!checkAssetsExist()) {
-    throw new Error('Flower assets not found');
+    throw new Error(`Flower assets not found at ${getFlowersAssetsPath()}`);
   }
 
   const positions = flowers.map((_, index) =>

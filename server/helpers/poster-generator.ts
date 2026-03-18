@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { getDirname } from './path-utils';
+import { getProjectRoot } from './path-utils';
 import PDFDocument from 'pdfkit';
 import SVGtoPDF from 'svg-to-pdfkit';
 import {
@@ -25,8 +25,7 @@ import {
   LOGO_OFFSET_MM,
 } from './poster-constants';
 
-const __dirname = getDirname(typeof import.meta !== 'undefined' ? import.meta.url : undefined);
-const OUTPUT_DIR = path.join(__dirname, '../../generated_pdf');
+const OUTPUT_DIR = path.join(getProjectRoot(), 'generated_pdf');
 
 export interface GeneratePosterInput {
   svg: string;

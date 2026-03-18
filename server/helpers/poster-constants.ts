@@ -1,7 +1,5 @@
 import * as path from 'path';
-import { getDirname } from './path-utils';
-
-const __dirname = getDirname(typeof import.meta !== 'undefined' ? import.meta.url : undefined);
+import { getProjectRoot } from './path-utils';
 
 /** A4 dimensions in PDF points (72 pt = 1 inch, 25.4 mm = 1 inch) */
 export const A4_WIDTH_PT = 595.28;
@@ -40,17 +38,17 @@ export const PDF_BACKGROUND_COLOR = '#fffaf5';
 /** Font paths - General Sans Bold (title), IvyPresto Display (names).
  *  Place font files in assets/fonts/. Falls back to Helvetica if missing. */
 export const FONT_TITLE = path.join(
-  __dirname,
-  '../../assets/fonts/GeneralSans-Bold.ttf',
+  getProjectRoot(),
+  'assets/fonts/GeneralSans-Bold.ttf',
 );
 export const FONT_NAMES = path.join(
-  __dirname,
-  '../../assets/fonts/PlayfairDisplay-Regular.ttf',
+  getProjectRoot(),
+  'assets/fonts/PlayfairDisplay-Regular.ttf',
 );
 
 /** MamaLoves logo — 20mm from right and bottom of page. Place file in assets/logo/. */
 export const LOGO_PATH = path.join(
-  __dirname,
-  '../../assets/logo/MAMALOVES_Logo_Liggend.png',
+  getProjectRoot(),
+  'assets/logo/MAMALOVES_Logo_Liggend.png',
 );
 export const LOGO_OFFSET_MM = 20; // mm from right and bottom edges

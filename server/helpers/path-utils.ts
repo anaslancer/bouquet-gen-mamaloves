@@ -13,3 +13,23 @@ export function getDirname(importMetaUrl: string | undefined): string {
   const entry = process.argv[1] || '.';
   return path.dirname(path.resolve(process.cwd(), entry));
 }
+
+/**
+ * Project root directory. Tries multiple strategies for cloud deployments:
+ * 1. PROJECT_ROOT env var (set in Render/Railway if needed)
+ * 2. Parent of dist/ (derived from entry script path - most reliable when bundled)
+ * 3. process.cwd() as fallback
+ */
+export function getProjectRoot(): string {
+  if (process.env.PROJECT_ROOT) {
+    return path.resolve(process.env.PROJECT_ROOT);
+  }
+  // Entry script is at project_root/dist/index.cjs — go up one level to project root
+  const entry = process.argv[1];
+  if (entry) {
+    const entryDir = path.dirname(path.resolve(process.cwd(), entry));
+    const candidate = path.dirname(entryDir); // parent of dist/
+    return candidate;
+  }
+  return process.cwd();
+}
