@@ -100,6 +100,28 @@ export function extractFlowersFromLineItem(lineItem: any): string[] | null {
   return flowers.filter(Boolean).length > 0 ? flowers.filter(Boolean) : null;
 }
 
+export function extractTextFromLineItem(lineItem: {
+  properties?: Array<{ name: string; value: string }>;
+}): { title?: string; names?: string } {
+  const result: { title?: string; names?: string } = {};
+
+  function getProp(
+    props: Array<{ name: string; value: string }> | undefined,
+    name: string,
+  ): string | undefined {
+    if (!props) return undefined;
+    const p = props.find((x) => x.name === name);
+    return p?.value?.trim() || undefined;
+  }
+
+  if (lineItem.properties?.length) {
+    result.title = getProp(lineItem.properties, POSTER_TITLE_PROP);
+    result.names = getProp(lineItem.properties, POSTER_NAMES_PROP);
+  }
+
+  return result;
+}
+
 export function extractTextFromOrder(orderData: {
   note_attributes?: Array<{ name: string; value: string }>;
   line_items?: Array<{ properties?: Array<{ name: string; value: string }> }>;

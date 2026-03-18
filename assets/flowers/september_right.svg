@@ -1,38 +1,310 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 656" width="227" height="656">
-  <path d="M88.00,9.00 C91.83,9.17 104.33,8.83 111.00,10.00 C117.67,11.17 126.83,11.50 128.00,16.00 C129.17,20.50 119.67,33.50 118.00,37.00" fill="none" stroke="black" stroke-width="6.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M83.00,10.00 C81.17,10.83 76.17,14.83 72.00,15.00 C67.83,15.17 62.00,11.50 58.00,11.00 C54.00,10.50 54.17,8.17 48.00,12.00 C41.83,15.83 25.50,30.33 21.00,34.00" fill="none" stroke="black" stroke-width="6.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M105.00,21.00 L108.00,34.00" fill="none" stroke="black" stroke-width="3.41" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48.00,22.00 C49.00,22.50 51.83,23.00 54.00,25.00 C56.17,27.00 59.83,32.50 61.00,34.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M73.00,26.00 L82.00,37.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M90.00,28.00 L96.00,37.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M32.00,34.00 L51.00,46.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M139.00,34.00 L128.00,49.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M17.00,41.00 C15.83,43.33 10.50,50.17 10.00,55.00 C9.50,59.83 10.00,64.17 14.00,70.00 C18.00,75.83 29.00,86.00 34.00,90.00 C39.00,94.00 39.17,92.83 44.00,94.00 C48.83,95.17 59.83,96.50 63.00,97.00" fill="none" stroke="black" stroke-width="5.66" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22.00,56.00 L40.00,57.00" fill="none" stroke="black" stroke-width="2.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M143.00,58.00 C144.00,57.17 146.33,54.33 149.00,53.00 C151.67,51.67 156.50,51.33 159.00,50.00 C161.50,48.67 166.67,49.83 164.00,45.00 C161.33,40.17 147.67,25.67 143.00,21.00 C138.33,16.33 138.67,17.67 136.00,17.00 C133.33,16.33 128.50,17.00 127.00,17.00" fill="none" stroke="black" stroke-width="6.16" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M84.00,60.00 L84.00,73.00" fill="none" stroke="black" stroke-width="2.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M101.00,61.00 L104.00,73.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M168.00,61.00 C167.17,61.00 165.50,59.83 163.00,61.00 C160.50,62.17 154.67,66.83 153.00,68.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M68.00,67.00 C69.00,68.33 72.83,72.33 74.00,75.00 C75.17,77.67 74.83,81.67 75.00,83.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48.00,68.00 L35.00,72.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M121.00,69.00 C120.50,71.00 119.00,78.67 118.00,81.00 C117.00,83.33 115.50,82.67 115.00,83.00" fill="none" stroke="black" stroke-width="2.41" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M60.00,72.00 L51.00,82.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M157.00,77.00 C158.50,75.83 161.83,72.00 166.00,70.00 C170.17,68.00 181.17,68.00 182.00,65.00 C182.83,62.00 174.17,55.00 171.00,52.00 C167.83,49.00 164.33,47.83 163.00,47.00" fill="none" stroke="black" stroke-width="7.21" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M141.00,86.00 L123.00,91.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M165.00,87.00 C166.33,87.00 168.83,86.17 173.00,87.00 C177.17,87.83 186.50,91.33 190.00,92.00 C193.50,92.67 194.00,94.33 194.00,91.00 C194.00,87.67 192.33,76.33 190.00,72.00 C187.67,67.67 181.67,66.17 180.00,65.00" fill="none" stroke="black" stroke-width="5.66" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M71.00,101.00 C72.33,102.83 76.33,110.00 79.00,112.00 C81.67,114.00 82.83,110.67 87.00,113.00 C91.17,115.33 100.33,122.67 104.00,126.00 C107.67,129.33 105.33,131.17 109.00,133.00 C112.67,134.83 115.67,135.83 126.00,137.00 C136.33,138.17 161.00,140.83 171.00,140.00 C181.00,139.17 182.67,134.83 186.00,132.00 C189.33,129.17 190.17,124.50 191.00,123.00" fill="none" stroke="black" stroke-width="6.32" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M156.00,103.00 L174.00,110.00" fill="none" stroke="black" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M178.00,114.00 C180.17,115.50 187.67,122.17 191.00,123.00 C194.33,123.83 196.50,121.67 198.00,119.00 C199.50,116.33 201.00,111.50 200.00,107.00 C199.00,102.50 193.33,94.50 192.00,92.00" fill="none" stroke="black" stroke-width="6.32" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M133.00,120.00 C130.17,118.83 120.50,115.83 116.00,113.00 C111.50,110.17 108.67,104.50 106.00,103.00 C103.33,101.50 102.67,104.50 100.00,104.00 C97.33,103.50 92.50,101.50 90.00,100.00 C87.50,98.50 84.83,97.83 85.00,95.00 C85.17,92.17 88.50,84.67 91.00,83.00 C93.50,81.33 97.50,83.83 100.00,85.00 C102.50,86.17 104.83,87.33 106.00,90.00 C107.17,92.67 107.17,98.67 107.00,101.00 C106.83,103.33 105.33,103.50 105.00,104.00" fill="none" stroke="black" stroke-width="6.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M183.00,200.00 C183.00,201.00 182.33,204.50 183.00,206.00 C183.67,207.50 184.67,209.00 187.00,209.00 C189.33,209.00 198.33,210.17 197.00,206.00 C195.67,201.83 185.17,190.00 179.00,184.00 C172.83,178.00 164.17,172.33 160.00,170.00 C155.83,167.67 155.17,168.50 154.00,170.00 C152.83,171.50 152.00,174.67 153.00,179.00 C154.00,183.33 158.50,190.67 160.00,196.00 C161.50,201.33 163.33,207.00 162.00,211.00 C160.67,215.00 154.00,216.67 152.00,220.00 C150.00,223.33 150.33,229.17 150.00,231.00" fill="none" stroke="black" stroke-width="6.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M216.00,240.00 C214.00,238.17 206.67,233.33 204.00,229.00 C201.33,224.67 200.67,216.50 200.00,214.00" fill="none" stroke="black" stroke-width="10.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M82.00,603.00 C79.33,592.00 70.00,559.83 66.00,537.00 C62.00,514.17 59.00,485.67 58.00,466.00 C57.00,446.33 59.00,429.33 60.00,419.00 C61.00,408.67 62.33,407.33 64.00,404.00 C65.67,400.67 68.33,399.00 70.00,399.00 C71.67,399.00 70.83,391.17 74.00,404.00 C77.17,416.83 83.17,451.83 89.00,476.00 C94.83,500.17 99.50,520.17 109.00,549.00 C118.50,577.83 139.83,632.33 146.00,649.00" fill="none" stroke="black" stroke-width="4.47" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M79.00,112.00 C78.17,115.67 74.83,128.00 74.00,134.00 C73.17,140.00 73.50,143.50 74.00,148.00 C74.50,152.50 75.17,158.83 77.00,161.00 C78.83,163.17 81.00,163.67 85.00,161.00 C89.00,158.33 97.17,149.83 101.00,145.00 C104.83,140.17 106.83,134.17 108.00,132.00" fill="none" stroke="black" stroke-width="4.47" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M77.00,161.00 C75.50,169.83 69.67,201.50 68.00,214.00 C66.33,226.50 64.83,232.33 67.00,236.00 C69.17,239.67 77.17,236.83 81.00,236.00 C84.83,235.17 85.83,231.50 90.00,231.00 C94.17,230.50 102.17,233.00 106.00,233.00 C109.83,233.00 111.50,231.83 113.00,231.00 C114.50,230.17 115.00,229.67 115.00,228.00 C115.00,226.33 114.00,222.83 113.00,221.00 C112.00,219.17 110.50,217.83 109.00,217.00 C107.50,216.17 105.83,215.83 104.00,216.00 C102.17,216.17 99.83,216.83 98.00,218.00 C96.17,219.17 94.33,220.83 93.00,223.00 C91.67,225.17 90.50,229.67 90.00,231.00" fill="none" stroke="black" stroke-width="6.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M197.00,206.00 C197.50,207.17 199.83,211.33 200.00,213.00 C200.17,214.67 199.17,215.50 198.00,216.00 C196.83,216.50 194.50,216.67 193.00,216.00 C191.50,215.33 189.50,213.17 189.00,212.00 C188.50,210.83 190.17,209.50 190.00,209.00 C189.83,208.50 188.33,209.00 188.00,209.00" fill="none" stroke="black" stroke-width="4.47" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M111.00,290.00 C111.50,288.17 111.50,283.67 114.00,279.00 C116.50,274.33 121.33,267.67 126.00,262.00 C130.67,256.33 138.00,250.17 142.00,245.00 C146.00,239.83 148.50,233.00 150.00,231.00 C151.50,229.00 150.00,232.67 151.00,233.00 C152.00,233.33 150.83,234.33 156.00,233.00 C161.17,231.67 176.33,226.17 182.00,225.00 C187.67,223.83 188.00,225.33 190.00,226.00 C192.00,226.67 191.33,228.50 194.00,229.00 C196.67,229.50 204.00,229.00 206.00,229.00" fill="none" stroke="black" stroke-width="7.21" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M84.00,236.00 C86.33,238.33 95.83,246.17 98.00,250.00 C100.17,253.83 98.33,256.00 97.00,259.00 C95.67,262.00 93.50,267.83 90.00,268.00 C86.50,268.17 80.50,262.00 76.00,260.00 C71.50,258.00 64.83,256.67 63.00,256.00 C61.17,255.33 64.83,257.17 65.00,256.00 C65.17,254.83 63.67,252.17 64.00,249.00 C64.33,245.83 66.50,239.00 67.00,237.00" fill="none" stroke="black" stroke-width="8.00" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M63.00,257.00 C63.50,262.33 65.33,274.67 66.00,289.00 C66.67,303.33 66.17,332.33 67.00,343.00 C67.83,353.67 69.17,352.17 71.00,353.00 C72.83,353.83 74.00,354.67 78.00,348.00 C82.00,341.33 89.33,322.83 95.00,313.00 C100.67,303.17 109.00,292.67 112.00,289.00 C115.00,285.33 112.00,290.67 113.00,291.00 C114.00,291.33 115.33,291.83 118.00,291.00 C120.67,290.17 123.17,286.50 129.00,286.00 C134.83,285.50 148.17,286.50 153.00,288.00 C157.83,289.50 157.17,292.83 158.00,295.00 C158.83,297.17 158.50,299.17 158.00,301.00 C157.50,302.83 156.83,304.17 155.00,306.00 C153.17,307.83 149.33,311.33 147.00,312.00 C144.67,312.67 143.83,312.33 141.00,310.00 C138.17,307.67 131.50,301.67 130.00,298.00 C128.50,294.33 131.67,289.67 132.00,288.00" fill="none" stroke="black" stroke-width="6.32" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M73.00,353.00 C72.67,353.00 71.67,345.17 71.00,353.00 C70.33,360.83 69.33,392.17 69.00,400.00" fill="none" stroke="black" stroke-width="10.00" stroke-linecap="round" stroke-linejoin="round"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 227 656"
+   width="227"
+   height="656"
+   version="1.1"
+   id="svg35"
+   sodipodi:docname="september_right.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs35" />
+  <sodipodi:namedview
+     id="namedview35"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showguides="true"
+     inkscape:zoom="1.2301829"
+     inkscape:cx="-37.799257"
+     inkscape:cy="430.83024"
+     inkscape:window-width="1127"
+     inkscape:window-height="1032"
+     inkscape:window-x="1985"
+     inkscape:window-y="56"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg35" />
+  <path
+     d="M88.00,9.00 C91.83,9.17 104.33,8.83 111.00,10.00 C117.67,11.17 126.83,11.50 128.00,16.00 C129.17,20.50 119.67,33.50 118.00,37.00"
+     fill="none"
+     stroke="black"
+     stroke-width="6.00"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path1"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M83.00,10.00 C81.17,10.83 76.17,14.83 72.00,15.00 C67.83,15.17 62.00,11.50 58.00,11.00 C54.00,10.50 54.17,8.17 48.00,12.00 C41.83,15.83 25.50,30.33 21.00,34.00"
+     fill="none"
+     stroke="black"
+     stroke-width="6.00"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path2"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M105.00,21.00 L108.00,34.00"
+     fill="none"
+     stroke="black"
+     stroke-width="3.41"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path3"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M48.00,22.00 C49.00,22.50 51.83,23.00 54.00,25.00 C56.17,27.00 59.83,32.50 61.00,34.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path4"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M73.00,26.00 L82.00,37.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path5"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M90.00,28.00 L96.00,37.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path6"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M32.00,34.00 L51.00,46.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path7"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M139.00,34.00 L128.00,49.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path8"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M17.00,41.00 C15.83,43.33 10.50,50.17 10.00,55.00 C9.50,59.83 10.00,64.17 14.00,70.00 C18.00,75.83 29.00,86.00 34.00,90.00 C39.00,94.00 39.17,92.83 44.00,94.00 C48.83,95.17 59.83,96.50 63.00,97.00"
+     fill="none"
+     stroke="black"
+     stroke-width="5.66"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path9"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M22.00,56.00 L40.00,57.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.00"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path10"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M143.00,58.00 C144.00,57.17 146.33,54.33 149.00,53.00 C151.67,51.67 156.50,51.33 159.00,50.00 C161.50,48.67 166.67,49.83 164.00,45.00 C161.33,40.17 147.67,25.67 143.00,21.00 C138.33,16.33 138.67,17.67 136.00,17.00 C133.33,16.33 128.50,17.00 127.00,17.00"
+     fill="none"
+     stroke="black"
+     stroke-width="6.16"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path11"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M84.00,60.00 L84.00,73.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.00"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path12"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M101.00,61.00 L104.00,73.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path13"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M168.00,61.00 C167.17,61.00 165.50,59.83 163.00,61.00 C160.50,62.17 154.67,66.83 153.00,68.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path14"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M68.00,67.00 C69.00,68.33 72.83,72.33 74.00,75.00 C75.17,77.67 74.83,81.67 75.00,83.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path15"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M48.00,68.00 L35.00,72.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path16"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M121.00,69.00 C120.50,71.00 119.00,78.67 118.00,81.00 C117.00,83.33 115.50,82.67 115.00,83.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.41"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path17"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M60.00,72.00 L51.00,82.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path18"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M157.00,77.00 C158.50,75.83 161.83,72.00 166.00,70.00 C170.17,68.00 181.17,68.00 182.00,65.00 C182.83,62.00 174.17,55.00 171.00,52.00 C167.83,49.00 164.33,47.83 163.00,47.00"
+     fill="none"
+     stroke="black"
+     stroke-width="7.21"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path19"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M141.00,86.00 L123.00,91.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path20"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M165.00,87.00 C166.33,87.00 168.83,86.17 173.00,87.00 C177.17,87.83 186.50,91.33 190.00,92.00 C193.50,92.67 194.00,94.33 194.00,91.00 C194.00,87.67 192.33,76.33 190.00,72.00 C187.67,67.67 181.67,66.17 180.00,65.00"
+     fill="none"
+     stroke="black"
+     stroke-width="5.66"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path21"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M 64.090458,98.561338 C 65.420458,100.39134 76.33,110 79,112 c 2.67,2 3.83,-1.33 8,1 4.17,2.33 13.33,9.67 17,13 3.67,3.33 1.33,5.17 5,7 3.67,1.83 6.67,2.83 17,4 10.33,1.17 35,3.83 45,3 10,-0.83 11.67,-5.17 15,-8 3.33,-2.83 4.17,-7.5 5,-9"
+     fill="none"
+     stroke="#000000"
+     stroke-width="6.32"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path22"
+     style="stroke-width:4;stroke-dasharray:none"
+     sodipodi:nodetypes="csssssssc" />
+  <path
+     d="M156.00,103.00 L174.00,110.00"
+     fill="none"
+     stroke="black"
+     stroke-width="2.83"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path23"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M178.00,114.00 C180.17,115.50 187.67,122.17 191.00,123.00 C194.33,123.83 196.50,121.67 198.00,119.00 C199.50,116.33 201.00,111.50 200.00,107.00 C199.00,102.50 193.33,94.50 192.00,92.00"
+     fill="none"
+     stroke="black"
+     stroke-width="6.32"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path24"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="M133.00,120.00 C130.17,118.83 120.50,115.83 116.00,113.00 C111.50,110.17 108.67,104.50 106.00,103.00 C103.33,101.50 102.67,104.50 100.00,104.00 C97.33,103.50 92.50,101.50 90.00,100.00 C87.50,98.50 84.83,97.83 85.00,95.00 C85.17,92.17 88.50,84.67 91.00,83.00 C93.50,81.33 97.50,83.83 100.00,85.00 C102.50,86.17 104.83,87.33 106.00,90.00 C107.17,92.67 107.17,98.67 107.00,101.00 C106.83,103.33 105.33,103.50 105.00,104.00"
+     fill="none"
+     stroke="black"
+     stroke-width="6.00"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path25"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="m 70.063044,366.83657 c 0.663452,3.89744 1.962411,16.05959 3.022457,22.32824 C 75.289049,402.19563 83.17,451.83 89,476 c 5.83,24.17 10.5,44.17 20,73 9.5,28.83 30.83,83.33 37,100"
+     fill="none"
+     stroke="#000000"
+     stroke-width="4.47"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path28"
+     style="stroke-width:4;stroke-dasharray:none"
+     sodipodi:nodetypes="csssc" />
+  <path
+     d="M79.00,112.00 C78.17,115.67 74.83,128.00 74.00,134.00 C73.17,140.00 73.50,143.50 74.00,148.00 C74.50,152.50 75.17,158.83 77.00,161.00 C78.83,163.17 81.00,163.67 85.00,161.00 C89.00,158.33 97.17,149.83 101.00,145.00 C104.83,140.17 106.83,134.17 108.00,132.00"
+     fill="none"
+     stroke="black"
+     stroke-width="4.47"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path29"
+     style="stroke-width:4;stroke-dasharray:none" />
+  <path
+     d="m 77,161 c -1.5,8.83 -7.33,40.5 -9,53 -1.67,12.5 -2.020404,17.6115 -2.724394,22.21555 C 64.631171,240.43011 77.17,236.83 81,236 c 3.83,-0.83 4.83,-4.5 9,-5 4.17,-0.5 12.17,2 16,2 3.83,0 5.5,-1.17 7,-2 1.5,-0.83 2,-1.33 2,-3 0,-1.67 -1,-5.17 -2,-7 -1,-1.83 -2.5,-3.17 -4,-4 -1.5,-0.83 -3.17,-1.17 -5,-1 -1.83,0.17 -4.17,0.83 -6,2 -1.83,1.17 -3.67,2.83 -5,5 -1.33,2.17 -2.5,6.67 -3,8"
+     fill="none"
+     stroke="#000000"
+     stroke-width="6.00"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path30"
+     style="stroke-width:4;stroke-dasharray:none"
+     sodipodi:nodetypes="cssssssssssssc" />
+  <path
+     d="m 84,236 c 2.33,2.33 11.83,10.17 14,14 2.17,3.83 0.33,6 -1,9 -1.33,3 -3.5,8.83 -7,9 -3.5,0.17 -9.5,-6 -14,-8 -4.5,-2 -12.822544,-7.06619 -12.8563,-3.92815 -0.0367,3.41155 0.03024,-4.0399 0.353352,-7.1437 0.105087,-1.00948 0.395754,-2.9981 0.661357,-4.91272 0.568455,-4.09774 1.135669,-8.59816 1.476446,-9.96127"
+     fill="none"
+     stroke="#000000"
+     stroke-width="8.00"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path33"
+     style="stroke-width:4;stroke-dasharray:none"
+     sodipodi:nodetypes="csssssssc" />
+  <path
+     d="m 63.1437,257 c 0.5,5.33 0.318206,17.8137 0.988206,32.1437 0.67,14.33 2.546149,42.88147 3.376149,53.55147 0.83,10.67 1.907634,16.28487 2.729863,25.54647"
+     fill="none"
+     stroke="#000000"
+     stroke-width="6.32"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path34"
+     style="stroke-width:4;stroke-dasharray:none"
+     sodipodi:nodetypes="cssc" />
 </svg>

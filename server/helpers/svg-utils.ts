@@ -25,6 +25,16 @@ function convertToStrokeOnly(content: string): string {
 
   result = result.replace(/fill="[^"]*"/g, 'fill="none"');
   result = result.replace(/fill:[^;"]*/g, 'fill:none');
+  // Remove inline stroke-width from style so normalized stroke-width attribute can take effect.
+  result = result.replace(/style="([^"]*)"/g, (_match, styleBody: string) => {
+    const cleaned = styleBody
+      .replace(/(^|;)\s*stroke-width\s*:\s*[^;"]*/gi, '$1')
+      .replace(/;;+/g, ';')
+      .replace(/^;|;$/g, '')
+      .trim();
+    return cleaned ? `style="${cleaned}"` : '';
+  });
+
   result = result.replace(/<path([^>]*)>/g, (match, attrs) => {
     if (attrs.includes('stroke=')) return match;
     const strokeAttr = ` stroke="${SVG_CONFIG.strokeColor}" stroke-width="${SVG_CONFIG.strokeWidth}"`;
@@ -393,6 +403,7 @@ export function composeBouquet(
   charmShape: CharmShape,
 ): string {
   const { viewBox, bindingPoint } = layout;
+  console.log(viewBox, bindingPoint);
   const config = CHARM_SHAPE_CONFIG[charmShape] ?? CHARM_SHAPE_CONFIG.coin;
 
   const flowersContent = flowers
@@ -417,15 +428,27 @@ export function composeBouquet(
   const cy = viewBox.height / 2;
 
   const needsScale = config.scaleX !== 1 || config.scaleY !== 1;
-  console.log(needsScale);
+
+  let vbX = 0,
+    vbY = 0,
+    vbW = viewBox.width,
+    vbH = viewBox.height;
+
   const scaleAttr = needsScale
     ? ` transform="translate(${cx}, ${cy}) scale(${config.scaleX}, ${config.scaleY}) translate(${-cx}, ${-cy})"`
     : '';
 
+  // const viewBoxRect =
+  //   charmShape === 'poster'
+  //     ? `<rect x="${vbX}" y="${vbY}" width="${vbW}" height="${vbH}" fill="rgba(200,200,200,0.2)" stroke="#666" stroke-width="2"/>`
+  //     : '';
+  const viewBoxRect = '';
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-     viewBox="0 0 ${viewBox.width} ${viewBox.height}"
+     viewBox="${vbX} ${vbY} ${vbW} ${vbH}"
      width="${viewBox.width}px" height="${viewBox.height}px">
+  ${viewBoxRect}
   <g id="bouquet"${scaleAttr}>
     <g id="flowers">
     ${flowersContent}

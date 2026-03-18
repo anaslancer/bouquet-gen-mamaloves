@@ -1,0 +1,37 @@
+{
+  "order": {
+    "id": "demo-order-12345",
+    "line_items": [
+      {
+        "id": "line-item-1",
+        "sku": "BFB-CO",
+        "properties": [
+          { "name": "Voorkant geboortebloem 1", "value": "Februari" },
+          { "name": "Voorkant geboortebloem 2", "value": "April" },
+          { "name": "Voorkant geboortebloem 3", "value": "Augustus" },
+          { "name": "Poster titel", "value": "FAMILY" },
+          { "name": "Namen", "value": "Ollie | Jill | Twan" }
+        ]
+      }
+    ]
+  }
+}
+{
+  "order": {
+    "id": "demo-order-12346",
+    "line_items": [
+      {
+        "id": "line-item-1",
+        "sku": "BFB-CO",
+        "properties": [
+          { "name": "Voorkant geboortebloem 1", "value": "Januari" },
+          { "name": "Voorkant geboortebloem 2", "value": "Mei" },
+          { "name": "Voorkant geboortebloem 3", "value": "September" },
+          { "name": "Voorkant geboortebloem 4", "value": "December" },
+          { "name": "Poster titel", "value": "GRANDMA'S GARDEN" },
+          { "name": "Namen", "value": "Lauren | Jill | Thom | Mees" }
+        ]
+      }
+    ]
+  }
+}

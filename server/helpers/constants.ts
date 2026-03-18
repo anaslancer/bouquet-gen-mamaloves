@@ -49,13 +49,21 @@ export const LAYOUT_SCALE: Record<number, { w: number; h: number }[]> = {
   ],
 };
 
-export const BASE_FLOWER_HEIGHT = 180;
+export const BASE_FLOWER_HEIGHT = 200;
+
+export const SVG_CONFIG = {
+  viewBoxWidth: 400,
+  viewBoxHeight: 400,
+  strokeColor: '#000000',
+  strokeWidth: 0.8,
+};
 
 export const SPREAD_MULTIPLIER: Record<CharmShape, number> = {
   coin: 1.0,
   round: 1.0,
   oval: 1.0,
   heart: 1.0,
+  poster: 1.0,
 };
 
 export type CharmShapeConfig = {
@@ -72,31 +80,32 @@ export const CHARM_SHAPE_CONFIG: Record<CharmShape, CharmShapeConfig> = {
     scaleX: 1,
     scaleY: 1,
   },
-  round: {
-    bindingPointX: 0.5,
-    bindingPointY: 0.8,
-    scaleX: 1.1,
-    scaleY: 1.8,
-  },
   oval: {
     bindingPointX: 0.5,
-    bindingPointY: 0.8,
-    scaleX: 1,
-    scaleY: 1,
+    bindingPointY: 0.74,
+    scaleX: 1.4,
+    scaleY: 2.2,
+  },
+  round: {
+    bindingPointX: 0.5,
+    bindingPointY: 0.66,
+    scaleX: 1.2,
+    scaleY: 1.1,
   },
   heart: {
     bindingPointX: 0.5,
-    bindingPointY: 0.8,
-    scaleX: 1,
-    scaleY: 1,
+    bindingPointY: 0.66,
+    scaleX: 0.9,
+    scaleY: 0.9,
   },
-};
-
-export const SVG_CONFIG = {
-  viewBoxWidth: 400,
-  viewBoxHeight: 400,
-  strokeColor: '#000000',
-  strokeWidth: 0.8,
+  poster: {
+    bindingPointX: 0.5,
+    bindingPointY: 0.63,
+    scaleX: 1.45,
+    scaleY: 1.45,
+    // scaleX: SVG_CONFIG.viewBoxWidth / BASE_FLOWER_HEIGHT,
+    // scaleY: SVG_CONFIG.viewBoxHeight / BASE_FLOWER_HEIGHT,
+  },
 };
 
 export { FLOWER_FILES } from './flower_constants';

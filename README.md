@@ -83,7 +83,11 @@ Returns `{ ok, filename, path, pdf }` (pdf is base64-encoded).
 
 ### `POST /api/poster/from-order`
 
-Generate posters from a Shopify-style order payload. Extracts flowers from line items and title/names from order properties (`Poster titel`, `Namen`). Returns `{ ok, orderId, posters: [{ lineItemId, filename, path, pdf }] }`.
+Generate posters from a Shopify-style order payload. Extracts flowers from line items and title/names from order properties (`Poster titel`, `Namen`). Returns `{ ok, orderId, posters: [{ lineItemId, filename, path, pdf }] }` — one PDF per line item.
+
+### `POST /api/poster/from-order/combined`
+
+Generate a single multi-page PDF from a Shopify-style order payload. Each line item becomes one page with its own bouquet, title, and names. Title/names are taken from each line item's properties when available, otherwise from order-level. Returns `{ ok, orderId, filename, path, pdf }`.
 
 ## Testing with the Demo UI
 

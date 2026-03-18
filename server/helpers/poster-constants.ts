@@ -15,24 +15,43 @@ export const MARGIN_PT = 56.69;
 export const CONTENT_WIDTH_PT = A4_WIDTH_PT - 2 * MARGIN_PT;
 export const CONTENT_HEIGHT_PT = A4_HEIGHT_PT - 2 * MARGIN_PT;
 
-/** Bouquet SVG target width in pt (~140mm) */
-export const BOUQUET_WIDTH_PT = 396.85;
+/** Bouquet SVG height as fraction of page height */
+export const BOUQUET_HEIGHT_FRACTION = 0.45;
 
-/** Typography */
-export const TITLE_FONT_SIZE = 24;
+/** Bouquet SVG target size in pt (square; height = 40% of page) */
+export const BOUQUET_HEIGHT_PT = A4_HEIGHT_PT * BOUQUET_HEIGHT_FRACTION;
+export const BOUQUET_WIDTH_PT = BOUQUET_HEIGHT_PT;
+
+/** Typography — General Sans Bold (heading), IvyPresto Display (names) */
+export const TITLE_FONT_SIZE = 23;
 export const TITLE_LINE_HEIGHT = 1.4;
-export const NAMES_FONT_SIZE = 18;
+/** Letter spacing for title (pt) to match reference design */
+export const TITLE_CHARACTER_SPACING = 10;
+export const NAMES_FONT_SIZE = 20;
 export const NAMES_LINE_HEIGHT = 1.4;
+/** Letter spacing for names (pt) */
+export const NAMES_CHARACTER_SPACING = 5;
 
 /** Spacing between sections in pt */
 export const SECTION_SPACING_PT = 24;
 
-/** Font paths - from @fontsource packages (WOFF supported by PDFKit) */
+/** Page background color */
+export const PDF_BACKGROUND_COLOR = '#fffaf5';
+
+/** Font paths - General Sans Bold (title), IvyPresto Display (names).
+ *  Place font files in assets/fonts/. Falls back to Helvetica if missing. */
 export const FONT_TITLE = path.join(
   __dirname,
-  '../../node_modules/@fontsource/crimson-text/files/crimson-text-latin-400-normal.woff',
+  '../../assets/fonts/GeneralSans-Bold.ttf',
 );
 export const FONT_NAMES = path.join(
   __dirname,
-  '../../node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff',
+  '../../assets/fonts/PlayfairDisplay-Regular.ttf',
 );
+
+/** MamaLoves logo — 20mm from right and bottom of page. Place file in assets/logo/. */
+export const LOGO_PATH = path.join(
+  __dirname,
+  '../../assets/logo/MAMALOVES_Logo_Liggend.png',
+);
+export const LOGO_OFFSET_MM = 20; // mm from right and bottom edges
