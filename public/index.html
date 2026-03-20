@@ -42,9 +42,23 @@
           </select>
         </div>
 
-        <button type="submit" class="btn btn-primary" id="generateBtn">
-          Generate
-        </button>
+        <div class="mb-3">
+          <label for="posterTitle" class="form-label">Poster title (optional)</label>
+          <input id="posterTitle" class="form-control" placeholder="e.g. Birth Flowers" />
+        </div>
+        <div class="mb-3">
+          <label for="posterNames" class="form-label">Poster names (optional)</label>
+          <input id="posterNames" class="form-control" placeholder="e.g. Emma & John" />
+        </div>
+
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary" id="generateBtn">
+            Generate
+          </button>
+          <button type="button" class="btn btn-success ms-2" id="posterBtn">
+            Generate & Download Poster PDF
+          </button>
+        </div>
       </form>
 
       <div id="status" class="mb-3" aria-live="polite"></div>
@@ -169,6 +183,7 @@
             svgEl.setAttribute('height', dim.height + 'px');
           }
 
+          const svgFilename = result.filename || 'bouquet.svg';
           status.innerHTML = '<span class="text-success">SVG received</span>';
 
           const blob = new Blob([container.innerHTML], {
@@ -177,10 +192,81 @@
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          a.download = 'bouquet.svg';
+          a.download = svgFilename;
           a.textContent = 'Download SVG';
           a.className = 'btn btn-outline-secondary btn-sm ms-2';
           status.appendChild(a);
+        } catch (err) {
+          status.innerHTML =
+            '<span class="text-danger">Error: ' +
+            (err.message || err) +
+            '</span>';
+        }
+      });
+
+      document.getElementById('posterBtn').addEventListener('click', async () => {
+        status.textContent = '';
+        const flowersStr = document.getElementById('flowers').value;
+        const flowers = flowersStr
+          .split(',')
+          .map((s) => s.trim())
+          .filter(Boolean);
+        const title = document.getElementById('posterTitle').value.trim() || undefined;
+        const names = document.getElementById('posterNames').value.trim() || undefined;
+
+        if (flowers.length < 1 || flowers.length > 5) {
+          status.innerHTML = '<span class="text-danger">Enter 1–5 flowers.</span>';
+          return;
+        }
+
+        try {
+          status.innerHTML =
+            '<div class="spinner-border spinner-border-sm" role="status"></div> Generating poster...';
+
+          const res = await fetch('/api/poster', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify({ flowers, title, names }),
+          });
+
+          if (!res.ok) {
+            let errBody;
+            try {
+              const j = await res.json();
+              errBody = j && (j.error || j.message || JSON.stringify(j));
+            } catch (_) {
+              try {
+                errBody = await res.text();
+              } catch (_) {
+                errBody = '';
+              }
+            }
+            throw new Error(
+              'Server error ' + res.status + (errBody ? ': ' + errBody : ''),
+            );
+          }
+
+          const result = await res.json();
+          const pdfBase64 = result && result.pdf;
+          if (!pdfBase64) {
+            throw new Error('No PDF returned in response');
+          }
+
+          const binary = atob(pdfBase64);
+          const bytes = new Uint8Array(binary.length);
+          for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+          const blob = new Blob([bytes], { type: 'application/pdf' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = result.filename || 'poster.pdf';
+          a.click();
+          URL.revokeObjectURL(url);
+
+          status.innerHTML = '<span class="text-success">Poster downloaded</span>';
         } catch (err) {
           status.innerHTML =
             '<span class="text-danger">Error: ' +
