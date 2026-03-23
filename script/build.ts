@@ -10,6 +10,7 @@ async function buildAll() {
     bundle: true,
     format: "cjs",
     outfile: "dist/index.cjs",
+    external: ["pdfkit", "svg-to-pdfkit"],
     define: {
       "process.env.NODE_ENV": '"production"',
     },
