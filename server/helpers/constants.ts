@@ -18,7 +18,7 @@ export const MONTH_TO_FLOWER: Record<string, string> = {
 export const LAYOUT_ANGLES: Record<number, number[]> = {
   1: [0],
   2: [-15, 15],
-  3: [-30, 0, 30],
+  3: [-20, 0, 20],
   4: [-20, -6, 6, 20],
   5: [-18, -8, 0, 8, 18],
 };
